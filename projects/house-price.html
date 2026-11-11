@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>House Price Prediction case study — Swan Htet Naing</title>
+  <meta name="description" content="Case study: a team model for Kaggle House Prices, stacking 7 Optuna-tuned regressors. Improved from rank #734 to #419 (top 8%), RMSE 0.12119." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="House Price Prediction — Kaggle case study" />
+  <meta property="og:description" content="Top 8% on Kaggle House Prices with a scikit-learn pipeline, engineered features and a stacked ensemble of 7 tuned models." />
+  <meta property="og:url" content="https://shn047.github.io/projects/house-price.html" />
+  <meta property="og:site_name" content="Swan Htet Naing" />
+  <meta property="og:image" content="https://shn047.github.io/assets/house-price/feature-relationships.jpg" />
+  <meta property="og:image:alt" content="House Price Prediction — Kaggle case study" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="House Price Prediction — Kaggle case study" />
+  <meta name="twitter:description" content="Top 8% on Kaggle House Prices with a scikit-learn pipeline, engineered features and a stacked ensemble of 7 tuned models." />
+  <meta name="twitter:image" content="https://shn047.github.io/assets/house-price/feature-relationships.jpg" />
+  <link rel="canonical" href="https://shn047.github.io/projects/house-price.html" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231d1d1f'/><text x='50%' y='54%' font-family='Helvetica,Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle' dominant-baseline='middle'>SN</text></svg>" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=20261111q" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="../index.html" class="nav__brand">Swan Htet Naing</a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="#overview">Overview</a>
+        <a href="#data">Data</a>
+        <a href="#approach">Approach</a>
+        <a href="#results">Results</a>
+        <a href="#learnings">Learnings</a>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a href="../assets/resume.pdf" class="btn btn--small" download>Resume</a>
+        <button type="button" class="icon-btn nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="cs">
+
+    <!-- ───────── Hero ───────── -->
+    <section class="container cs-hero" id="overview">
+      <a class="cs-back" href="../index.html#projects">← All projects</a>
+      <p class="tag">Machine Learning · Regression</p>
+      <h1>House Price Prediction <span class="h3-sub">· Kaggle</span></h1>
+      <p class="cs-lead">Predicting the sale price of homes from around 80 messy, real-world property features. Our team built a reusable scikit-learn pipeline and a stacked ensemble of 7 tuned models that finished in the top 8% of the global leaderboard.</p>
+
+      <dl class="cs-facts">
+        <div><dt>My role</dt><dd>Coordinated the team; responsible for features, the pipeline, tuning and the stacked ensemble</dd></div>
+        <div><dt>Team</dt><dd>Team of 4 · Data Science course, KMUTT</dd></div>
+        <div><dt>Competition</dt><dd>Kaggle House Prices · scored by RMSE on log price</dd></div>
+        <div><dt>Stack</dt><dd>Python · scikit-learn · Optuna · LightGBM · XGBoost</dd></div>
+      </dl>
+    </section>
+
+    <!-- ───────── Scoreboard ───────── -->
+    <section class="container cs-demo">
+      <div class="demo-stage">
+        <div class="cs-score">
+          <div class="cs-score__item"><span class="cs-score__k">Leaderboard rank</span><span class="cs-score__v">#419</span></div>
+          <div class="cs-score__item"><span class="cs-score__k">Global standing</span><span class="cs-score__v">Top 8%</span></div>
+          <div class="cs-score__item"><span class="cs-score__k">Final RMSE</span><span class="cs-score__v">0.12119</span></div>
+          <div class="cs-score__item"><span class="cs-score__k">Improved from</span><span class="cs-score__v">#734</span></div>
+        </div>
+        <button class="cs-score__proof" type="button" data-image="../assets/house-price/leaderboard.png" data-caption="Kaggle leaderboard entry: rank 419, score 0.12119">
+          <img src="../assets/house-price/leaderboard.png" alt="Kaggle leaderboard row: rank 419, Swan Htet Naing, score 0.12119" />
+          <span>Leaderboard entry · click to enlarge</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ───────── Summary ───────── -->
+    <section class="container cs-section cs-section--tight">
+      <div class="cs-glance">
+        <article class="card">
+          <p class="label">The task</p>
+          <p>Predict the final sale price of each home in the test set from its property features.</p>
+        </article>
+        <article class="card">
+          <p class="label">What we built</p>
+          <p>A scikit-learn preprocessing pipeline, engineered features, and a stacked ensemble of 7 Optuna-tuned models with a RidgeCV meta-model.</p>
+        </article>
+        <article class="card">
+          <p class="label">Result</p>
+          <p><span class="metric">Top 8%</span> globally with <span class="metric">RMSE 0.12119</span>, up from rank #734 (RMSE 0.12603) with our best single model.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── Challenge ───────── -->
+    <section class="container cs-section">
+      <div class="cs-prose">
+        <p class="kicker">The challenge</p>
+        <h2>Lots of features, not much data, and plenty of noise.</h2>
+        <p>Accurate price estimates drive pricing strategy and planning, but this dataset makes them hard. Each of the 1,460 training homes, all in Ames, Iowa, is described by around 80 features, from lot size and build year to the quality of the kitchen. With so many features and so few homes, overfitting is the main risk.</p>
+      </div>
+      <div class="cs-problems cs-problems--3">
+        <article class="card cs-problem">
+          <p class="cs-problem__n">Missing values</p>
+          <h3>Some features are almost empty.</h3>
+          <p>Several columns are missing for most homes, and many smaller gaps are spread across garage and basement features.</p>
+        </article>
+        <article class="card cs-problem">
+          <p class="cs-problem__n">Skewed prices</p>
+          <h3>Prices have a long tail.</h3>
+          <p>A few very expensive homes stretch the price range, so we modelled log(SalePrice) instead of the raw price.</p>
+        </article>
+        <article class="card cs-problem">
+          <p class="cs-problem__n">High dimensionality</p>
+          <h3>About 80 features to choose from.</h3>
+          <p>Many features overlap or carry little signal, so how they are combined and encoded matters.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── Data ───────── -->
+    <section class="container cs-section" id="data">
+      <div class="cs-prose">
+        <p class="kicker">Exploring the data</p>
+        <h2>Understand the data before modelling it.</h2>
+        <p>The project ran in three phases: exploring the data, tuning single models, then building an ensemble. We started with exploratory data analysis to understand distributions, trends and outliers, and to see where the data was missing.</p>
+      </div>
+
+      <div class="cs-split cs-split--data">
+        <figure class="cs-figure">
+          <button class="cs-figure__img" type="button" data-image="../assets/house-price/missingness.jpg" data-caption="Missingness map: present (green) vs missing (grey) values for each feature with gaps">
+            <img src="../assets/house-price/missingness.jpg" alt="Missingness map showing which features have missing values for each house" loading="lazy" />
+          </button>
+          <figcaption>Missingness map: green is present, grey is missing. Click to enlarge.</figcaption>
+        </figure>
+        <div class="card cs-checks">
+          <p class="label">What the map shows</p>
+          <ul class="cs-bars">
+            <li><span>PoolQC</span><span class="cs-bar"><i style="width:99.5%"></i></span><b>99.5%</b></li>
+            <li><span>MiscFeature</span><span class="cs-bar"><i style="width:96.3%"></i></span><b>96.3%</b></li>
+            <li><span>Alley</span><span class="cs-bar"><i style="width:93.8%"></i></span><b>93.8%</b></li>
+            <li><span>Fence</span><span class="cs-bar"><i style="width:80.8%"></i></span><b>80.8%</b></li>
+            <li><span>MasVnrType</span><span class="cs-bar"><i style="width:59.7%"></i></span><b>59.7%</b></li>
+            <li><span>FireplaceQu</span><span class="cs-bar"><i style="width:47.3%"></i></span><b>47.3%</b></li>
+            <li><span>LotFrontage</span><span class="cs-bar"><i style="width:17.7%"></i></span><b>17.7%</b></li>
+            <li><span>Garage features</span><span class="cs-bar"><i style="width:5.5%"></i></span><b>5.5%</b></li>
+          </ul>
+          <p class="cs-note">Share of homes missing each feature. In this dataset a blank often means the home simply doesn't have it (no pool, no alley access), which is different from data that was never recorded.</p>
+        </div>
+      </div>
+
+      <figure class="cs-figure cs-figure--wide">
+        <button class="cs-figure__img" type="button" data-image="../assets/house-price/feature-relationships.jpg" data-caption="Top feature relationships with SalePrice: overall quality, living area, garage capacity, neighbourhood and exterior quality">
+          <img src="../assets/house-price/feature-relationships.jpg" alt="Charts of sale price against overall quality, above-ground living area, garage cars, neighbourhood and exterior quality" loading="lazy" />
+        </button>
+        <figcaption>The strongest signals: overall quality, living area, garage capacity, neighbourhood and exterior quality all rise with sale price.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ───────── Approach ───────── -->
+    <section class="container cs-section" id="approach">
+      <div class="cs-prose">
+        <p class="kicker">Approach</p>
+        <h2>A reusable pipeline, then a stacked ensemble.</h2>
+        <p>All preprocessing lived in one scikit-learn Pipeline, so every experiment and the final submission used exactly the same steps. In the second phase we tuned single models (XGBoost, CatBoost, LightGBM and TabPFN) with Optuna; the best, XGBoost, reached rank #734. In the final phase we tuned seven models and stacked them.</p>
+      </div>
+
+      <div class="card cs-arch">
+        <div class="pipeline" aria-label="Raw data to preprocessing to feature engineering to a stacked ensemble of tuned models">
+          <div class="node" tabindex="0"><span class="node__k">Input</span><span class="node__v">Raw data</span><span class="node__s">~80 features</span><span class="node__tip" role="tooltip">1,460 training homes, each described by 79 property, location and quality features.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">Clean</span><span class="node__v">Preprocessing</span><span class="node__s">Impute · scale · encode</span><span class="node__tip" role="tooltip">Fills gaps (&quot;None&quot; for categories, the mean for numbers), scales numbers and one-hot encodes categories, all in one scikit-learn Pipeline.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">Engineer</span><span class="node__v">Features</span><span class="node__s">Size · age · quality</span><span class="node__tip" role="tooltip">Adds total floor area, total bathrooms, property age, yes/no amenity flags (pool, garage, fireplace…) and quality × area interactions.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node node--accent" tabindex="0"><span class="node__k">Model</span><span class="node__v">Stacked ensemble</span><span class="node__s">7 tuned models → RidgeCV</span><span class="node__tip" role="tooltip">LightGBM, XGBoost, ElasticNet, Lasso, Ridge, KernelRidge and ExtraTrees, each tuned with Optuna (about 50 trials, 5-fold CV RMSE), combined by a RidgeCV meta-model.</span></div>
+        </div>
+        <p class="pipeline__hint mono muted">↳ Hover or tap a step for details</p>
+      </div>
+
+      <ol class="cs-steps cs-steps--4">
+        <li class="card"><span class="cs-steps__n">01</span><h3>Explore</h3><p>EDA of distributions, trends, outliers and missing data.</p></li>
+        <li class="card"><span class="cs-steps__n">02</span><h3>Preprocess</h3><p>Impute, scale and one-hot encode in one pipeline, and predict log(SalePrice) instead of the raw price.</p></li>
+        <li class="card"><span class="cs-steps__n">03</span><h3>Engineer</h3><p>Total size, bathrooms and property age, amenity flags, and quality × area interactions.</p></li>
+        <li class="card"><span class="cs-steps__n">04</span><h3>Tune &amp; stack</h3><p>Optuna tuned 7 models on 5-fold CV RMSE; a RidgeCV meta-model stacks them.</p></li>
+      </ol>
+    </section>
+
+    <!-- ───────── Results ───────── -->
+    <section class="container cs-section" id="results">
+      <div class="cs-split">
+        <div class="cs-prose">
+          <p class="kicker">Results</p>
+          <h2>Top 8% out of a global field.</h2>
+          <p>The final stacked model reached an RMSE of <strong>0.12119</strong> on the leaderboard, placing <strong>#419</strong>, in the top 8% worldwide. That was up from <strong>#734</strong> (RMSE 0.12603) with our best single model, a tuned XGBoost, in the previous phase: combining models beat any one model on its own.</p>
+        </div>
+        <div class="card cs-checks">
+          <p class="label">Where this applies</p>
+          <ul class="bullets">
+            <li><strong>Pricing:</strong> estimating fair value for listings and offers</li>
+            <li><strong>Value drivers:</strong> showing which features move price the most</li>
+            <li><strong>Planning:</strong> data-driven decisions instead of gut feel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Learnings ───────── -->
+    <section class="container cs-section" id="learnings">
+      <div class="card">
+        <p class="kicker">What I learned</p>
+        <ul class="bullets cs-learn">
+          <li><strong>Reproducible pipelines pay off.</strong> Keeping preprocessing in one Pipeline meant every experiment, and the final submission, used exactly the same steps.</li>
+          <li><strong>Small gains matter near the top.</strong> Lowering RMSE by less than 0.005 (0.12603 → 0.12119) moved us from #734 to #419.</li>
+          <li><strong>Accuracy vs. interpretability is a real trade-off.</strong> A stack of 7 models is hard to explain; in business settings, a slightly less accurate but explainable model can be the better choice.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────── Footer CTA ───────── -->
+    <section class="container cs-section">
+      <div class="contact card cs-next">
+        <p class="kicker">Next</p>
+        <h2>See more of my work.</h2>
+        <div class="cta cta--center">
+          <a href="aquasense.html" class="btn">AquaSense case study →</a>
+          <a href="../index.html#projects" class="btn btn--ghost">All projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <p>© <span id="year">2026</span> Swan Htet Naing · Bangkok, Thailand</p>
+    <a href="#overview">Back to top ↑</a>
+  </footer>
+
+  <dialog class="video-modal" id="videoModal" aria-label="Demo video">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close video">✕</button>
+      <video controls playsinline preload="none"></video>
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+  <dialog class="video-modal image-modal" id="imageModal" aria-label="Image">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close">✕</button>
+      <img alt="" />
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+
+  <script src="../script.js?v=20261111a"></script>
+</body>
+</html>

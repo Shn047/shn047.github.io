@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LX-Sense case study — Swan Htet Naing</title>
+  <meta name="description" content="Case study: LX-Sense, a privacy-first design that detects room occupancy on-device to automate campus lighting and cooling. Honorable Mention, KMUTT 2025." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="LX-Sense — privacy-first computer vision for energy saving (design concept)" />
+  <meta property="og:description" content="Award-winning design: on-device occupancy detection that switches off lighting and cooling in empty rooms, without storing anyone's image." />
+  <meta property="og:url" content="https://shn047.github.io/projects/lx-sense.html" />
+  <meta property="og:site_name" content="Swan Htet Naing" />
+  <meta property="og:image" content="https://shn047.github.io/assets/lxsense.png" />
+  <meta property="og:image:alt" content="LX-Sense — privacy-first computer vision for energy saving (design concept)" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LX-Sense — privacy-first computer vision for energy saving (design concept)" />
+  <meta name="twitter:description" content="Award-winning design: on-device occupancy detection that switches off lighting and cooling in empty rooms, without storing anyone's image." />
+  <meta name="twitter:image" content="https://shn047.github.io/assets/lxsense.png" />
+  <link rel="canonical" href="https://shn047.github.io/projects/lx-sense.html" />
+  
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231d1d1f'/><text x='50%' y='54%' font-family='Helvetica,Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle' dominant-baseline='middle'>SN</text></svg>" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=20261111q" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="../index.html" class="nav__brand">Swan Htet Naing</a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="#overview">Overview</a>
+        <a href="#problem">Problem</a>
+        <a href="#design">Design</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#learnings">Learnings</a>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a href="../assets/resume.pdf" class="btn btn--small" download>Resume</a>
+        <button type="button" class="icon-btn nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="cs">
+
+    <!-- ───────── Hero ───────── -->
+    <section class="container cs-hero" id="overview">
+      <a class="cs-back" href="../index.html#projects">← All projects</a>
+      <p class="tag">System design · Computer Vision · Energy</p>
+      <h1>LX-Sense <span class="h3-sub cs-h1-sub">· Privacy-first vision for energy saving</span></h1>
+      <p class="cs-lead">A software-only system designed to turn a campus's existing CCTV cameras into privacy-safe occupancy sensors, so lighting and cooling switch off in empty rooms, without recording or sending any video.</p>
+      <p class="cs-concept"><span>Design concept</span>A competition entry: research, system design and projected impact, pitched to judges. Not a built product.</p>
+
+      <dl class="cs-facts">
+        <div><dt>Competition</dt><dd>KMUTT Energy Saving Day 2025 · energy-conservation poster contest</dd></div>
+        <div><dt>Award</dt><dd>Honorable Mention</dd></div>
+        <div><dt>My role</dt><dd>Literature review · detection approach design · pitch</dd></div>
+        <div><dt>Focus</dt><dd>People counting · edge AI on low-power devices · privacy by design</dd></div>
+      </dl>
+    </section>
+
+    <!-- ───────── Hero visual ───────── -->
+    <section class="container cs-demo">
+      <div class="demo-stage">
+        <div class="cs-room" aria-label="Illustration: an occupied room keeps lights on, an empty room switches them off">
+          <div class="cs-room__panel cs-room__panel--on">
+            <span class="cs-room__light" aria-hidden="true"></span>
+            <div class="cs-room__people" aria-hidden="true"><i></i><i></i><i></i></div>
+            <p class="cs-room__k">Room occupied</p>
+            <p class="cs-room__v">Lights &amp; AC <b>on</b></p>
+          </div>
+          <div class="cs-room__arrow" aria-hidden="true">
+            <span>LX-Sense</span>
+            <small>on-device AI</small>
+          </div>
+          <div class="cs-room__panel cs-room__panel--off">
+            <span class="cs-room__light" aria-hidden="true"></span>
+            <div class="cs-room__people" aria-hidden="true"></div>
+            <p class="cs-room__k">Room empty</p>
+            <p class="cs-room__v">Lights &amp; AC <b>off</b></p>
+          </div>
+        </div>
+        <p class="cs-ecg__note mono cs-room__note">Illustration of the concept</p>
+      </div>
+    </section>
+
+    <!-- ───────── Summary ───────── -->
+    <section class="container cs-section cs-section--tight">
+      <div class="cs-glance">
+        <article class="card">
+          <p class="label">Who it's for</p>
+          <p>Campus facilities teams paying to light and cool rooms nobody is using.</p>
+        </article>
+        <article class="card">
+          <p class="label">What we designed</p>
+          <p>A pre-trained local AI module that reuses existing CCTV to count people and drive lighting and HVAC. <strong>No new hardware, no video stored.</strong></p>
+        </article>
+        <article class="card">
+          <p class="label">Result</p>
+          <p><span class="metric">Honorable Mention</span> in the KMUTT Energy Saving Day 2025 poster contest.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── Problem ───────── -->
+    <section class="container cs-section" id="problem">
+      <div class="cs-prose">
+        <p class="kicker">The challenge</p>
+        <h2>Saving energy without watching people.</h2>
+      </div>
+      <div class="cs-problems">
+        <article class="card cs-problem">
+          <p class="cs-problem__n">Problem 1 · Energy</p>
+          <h3>Empty rooms waste power.</h3>
+          <p>Lights and air-conditioning keep running in rooms nobody is using, and today's fixes fall short:</p>
+          <ul class="bullets">
+            <li><strong>Motion sensors are unreliable:</strong> they switch lights off on people sitting still while studying</li>
+            <li><strong>New "smart" sensors are costly:</strong> device cost plus installation in every room</li>
+          </ul>
+        </article>
+        <article class="card cs-problem">
+          <p class="cs-problem__n">Problem 2 · Privacy</p>
+          <h3>Cameras feel like surveillance.</h3>
+          <p>Cameras can see occupancy well, but putting them in classrooms raises serious privacy concerns. A solution has to save energy without becoming a monitoring system.</p>
+        </article>
+      </div>
+      <div class="card cs-goal">
+        <p class="label">The goal</p>
+        <p>Design an AI system that <strong>cuts wasted energy</strong> in shared campus spaces, <strong>without new hardware</strong>, while <strong>protecting the privacy</strong> of the people in them.</p>
+      </div>
+    </section>
+
+    <!-- ───────── Design ───────── -->
+    <section class="container cs-section" id="design">
+      <div class="cs-prose">
+        <p class="kicker">System design</p>
+        <h2>From camera feed to energy decision, entirely on-device.</h2>
+        <p>The key idea: campuses already have CCTV. LX-Sense is <strong>100% software</strong>. A pre-trained AI model runs on a low-power device such as a <strong>Raspberry Pi</strong>, counts people in the live feed in real time, and passes on only an anonymous head count for energy decisions.</p>
+      </div>
+
+      <div class="card cs-arch">
+        <div class="pipeline" aria-label="Camera feed to on-device LX-Sense module to occupancy signal to lighting and HVAC control">
+          <div class="node" tabindex="0"><span class="node__k">Input</span><span class="node__v">Existing CCTV</span><span class="node__s">No new hardware</span><span class="node__tip" role="tooltip">Reuses the cameras already installed on campus; the live feed goes only to the local module, never to the cloud.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">Edge AI</span><span class="node__v">LX-Sense module</span><span class="node__s">e.g. Raspberry Pi</span><span class="node__tip" role="tooltip">A pre-trained computer vision model on a low-power local device detects and counts people in real time.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">Signal</span><span class="node__v">People count</span><span class="node__s">Anonymous · no video</span><span class="node__tip" role="tooltip">Only an anonymous occupancy count leaves the module; no video is recorded or transmitted.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node node--accent" tabindex="0"><span class="node__k">Act</span><span class="node__v">Lighting &amp; HVAC</span><span class="node__s">Energy optimisation</span><span class="node__tip" role="tooltip">Decision logic dims lights or adjusts cooling when a room is empty.</span></div>
+        </div>
+        <p class="pipeline__hint mono muted">↳ Hover or tap a step for details</p>
+        <figure class="cs-figure">
+          <button class="cs-figure__img" type="button" data-image="../assets/lxsense.png" data-caption="LX-Sense concept: camera feed → LX-Sense module (pre-trained local AI) → energy optimisation">
+            <img src="../assets/lxsense.png" alt="Concept diagram: camera feed, then LX-Sense module running pre-trained local AI, then energy optimisation" loading="lazy" />
+          </button>
+          <figcaption>Original concept diagram. Click to enlarge.</figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-split cs-split--gap">
+        <div class="cs-prose">
+          <h3 class="cs-h3">Robust over perfect.</h3>
+          <p>Rather than chasing high-precision recognition, the decision logic was designed to be <strong>reliable in dynamic real-world rooms</strong>, where people come and go, lighting changes and furniture moves, and to fail safely rather than switch lights off on a full class. Unlike motion sensors, a people count doesn't drop to zero when students sit still.</p>
+        </div>
+        <div class="card cs-checks">
+          <p class="label">Design priorities</p>
+          <ul class="bullets">
+            <li><strong>Robustness</strong> in changing, crowded spaces</li>
+            <li><strong>Reliability</strong> so energy control never disrupts a class</li>
+            <li><strong>Ethical deployment</strong> in shared environments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Privacy ───────── -->
+    <section class="container cs-section" id="privacy">
+      <div class="cs-prose">
+        <p class="kicker">Privacy by design</p>
+        <h2>Built to control energy, not to watch people.</h2>
+      </div>
+      <ol class="cs-steps">
+        <li class="card"><span class="cs-steps__n">On-device</span><h3>Processing stays local</h3><p>All processing happens on the local device; video is never recorded or sent anywhere.</p></li>
+        <li class="card"><span class="cs-steps__n">Minimal data</span><h3>Nothing identifiable stored</h3><p>Only an anonymous people count is passed on; no images or personal data are stored.</p></li>
+        <li class="card"><span class="cs-steps__n">Purpose-limited</span><h3>Energy, not surveillance</h3><p>The decision logic is limited to lighting and power control, by design.</p></li>
+      </ol>
+    </section>
+
+    <!-- ───────── Impact & learnings ───────── -->
+    <section class="container cs-section" id="learnings">
+      <div class="cs-two">
+        <article class="card">
+          <p class="kicker">Impact &amp; recognition</p>
+          <ul class="bullets">
+            <li><strong>Honorable Mention</strong> (รางวัลชมเชย) in the energy-conservation poster contest, KMUTT Energy Saving Day 2025.</li>
+            <li><strong>Energy:</strong> potential to significantly reduce wasted electricity.</li>
+            <li><strong>Environment:</strong> supports KMUTT's green campus goals by lowering the carbon footprint.</li>
+            <li><strong>Experience:</strong> lights would no longer switch off on students sitting still.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="kicker">What I learned</p>
+          <ul class="bullets">
+            <li><strong>Privacy shapes the architecture.</strong> It decided where processing runs and what data exists at all.</li>
+            <li><strong>Think at the system level.</strong> Real-world AI is about the whole loop, not just the model.</li>
+            <li><strong>Balance performance with responsibility.</strong> Sustainability tech still has to earn people's trust.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── At the competition ───────── -->
+    <section class="container cs-section" id="recognition">
+      <div class="cs-prose">
+        <p class="kicker">At the competition</p>
+        <h2>On stage at KMUTT Energy Saving Day.</h2>
+      </div>
+      <div class="gal">
+        <figure class="cs-figure gal__item gal__item--wide">
+          <button class="cs-figure__img" type="button" data-image="../assets/awards/eesh-pitch.jpg" data-caption="Pitching LX-Sense on stage">
+            <img src="../assets/awards/eesh-pitch.jpg" alt="Pitching LX-Sense on stage" loading="lazy" />
+          </button>
+          <figcaption>Pitching LX-Sense on stage</figcaption>
+        </figure>
+        <figure class="cs-figure gal__item">
+          <button class="cs-figure__img" type="button" data-image="../assets/awards/eesh-handover.jpg" data-caption="Receiving the Honorable Mention">
+            <img src="../assets/awards/eesh-handover.jpg" alt="Receiving the Honorable Mention" loading="lazy" />
+          </button>
+          <figcaption>Receiving the Honorable Mention</figcaption>
+        </figure>
+        <figure class="cs-figure gal__item">
+          <button class="cs-figure__img" type="button" data-image="../assets/awards/eesh-certificate.jpg" data-caption="Certificate, KMUTT Energy Saving Day 2025, 18 Nov 2025">
+            <img src="../assets/awards/eesh-certificate.jpg" alt="Certificate, KMUTT Energy Saving Day 2025, 18 Nov 2025" loading="lazy" />
+          </button>
+          <figcaption>Certificate, KMUTT Energy Saving Day 2025, 18 Nov 2025</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────── Poster ───────── -->
+    <section class="container cs-section">
+      <div class="cs-prose">
+        <p class="kicker">The pitch</p>
+        <h2>The competition poster.</h2>
+        <p>"LX-Sense aims to show that smart, ethical AI can save energy, cost and privacy, all at once."</p>
+      </div>
+      <figure class="cs-figure cs-figure--wide">
+        <button class="cs-figure__img" type="button" data-image="../assets/lx-sense/poster.jpg" data-caption="LX-Sense poster, KMUTT Energy Saving Day 2025">
+          <img src="../assets/lx-sense/poster.jpg" alt="LX-Sense competition poster covering the problem, the solution, how it works and the impact" loading="lazy" />
+        </button>
+        <figcaption>Poster presented at KMUTT Energy Saving Day 2025. Click to enlarge.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ───────── Footer CTA ───────── -->
+    <section class="container cs-section">
+      <div class="contact card cs-next">
+        <p class="kicker">Next</p>
+        <h2>See more of my work.</h2>
+        <div class="cta cta--center">
+          <a href="hanziflow.html" class="btn">HanziFlow case study →</a>
+          <a href="../index.html#projects" class="btn btn--ghost">All projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <p>© <span id="year">2026</span> Swan Htet Naing · Bangkok, Thailand</p>
+    <a href="#overview">Back to top ↑</a>
+  </footer>
+
+  <dialog class="video-modal" id="videoModal" aria-label="Demo video">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close video">✕</button>
+      <video controls playsinline preload="none"></video>
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+  <dialog class="video-modal image-modal" id="imageModal" aria-label="Image">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close">✕</button>
+      <img alt="" />
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+
+  <script src="../script.js?v=20261111a"></script>
+</body>
+</html>

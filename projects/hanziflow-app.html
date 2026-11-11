@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HanziFlow Learning App case study — Swan Htet Naing</title>
+  <meta name="description" content="Case study: HanziFlow, a Flutter app for HSK 1 Chinese with AI feedback on pronunciation and handwriting. Capstone project at KMUTT, live in beta." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="HanziFlow Learning App — capstone case study" />
+  <meta property="og:description" content="A Flutter + FastAPI + Supabase app that gives HSK 1 learners honest AI feedback on pronunciation and handwriting." />
+  <meta property="og:url" content="https://shn047.github.io/projects/hanziflow-app.html" />
+  <meta property="og:site_name" content="Swan Htet Naing" />
+  <meta property="og:image" content="https://shn047.github.io/assets/hanziflow-app/screens-real.jpg" />
+  <meta property="og:image:alt" content="HanziFlow Learning App — capstone case study" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HanziFlow Learning App — capstone case study" />
+  <meta name="twitter:description" content="A Flutter + FastAPI + Supabase app that gives HSK 1 learners honest AI feedback on pronunciation and handwriting." />
+  <meta name="twitter:image" content="https://shn047.github.io/assets/hanziflow-app/screens-real.jpg" />
+  <link rel="canonical" href="https://shn047.github.io/projects/hanziflow-app.html" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231d1d1f'/><text x='50%' y='54%' font-family='Helvetica,Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle' dominant-baseline='middle'>SN</text></svg>" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=20261111q" />
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="../index.html" class="nav__brand">Swan Htet Naing</a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#evaluation">Evaluation</a>
+        <a href="#next">Next</a>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a href="../assets/resume.pdf" class="btn btn--small" download>Resume</a>
+        <button type="button" class="icon-btn nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="cs">
+
+    <!-- ───────── Hero ───────── -->
+    <section class="container cs-hero" id="overview">
+      <a class="cs-back" href="../index.html#projects">← All projects</a>
+      <p class="tag">Mobile app · AI · Full stack</p>
+      <h1>HanziFlow <span class="h3-sub cs-h1-sub">· Learning App</span></h1>
+      <p class="cs-lead">A Flutter app that takes absolute beginners through HSK 1 Chinese, with honest AI feedback on pronunciation and handwriting, and AI-generated practice sentences that stay within what a beginner knows.</p>
+      <p class="cs-concept cs-concept--live"><span>Live beta</span>Capstone project, deployed; user testing with beginners is next.</p>
+
+      <dl class="cs-facts">
+        <div><dt>My role</dt><dd>Built the Flutter app; contributed to the pronunciation model</dd></div>
+        <div><dt>Team</dt><dd>Team of 3 · Capstone project, KMUTT</dd></div>
+        <div><dt>Timeline</dt><dd>Jan – Nov 2026</dd></div>
+        <div><dt>Stack</dt><dd>Flutter · FastAPI · Supabase · AWS EC2 · PyTorch · DeepSeek</dd></div>
+      </dl>
+      <div class="cs-actions">
+        <a class="btn btn--small" href="https://www.hanziflow.site" target="_blank" rel="noopener">Try the live app ↗</a>
+      </div>
+      <p class="private-note">Source code is private while the capstone is being assessed. A walkthrough is available on request.</p>
+    </section>
+
+    <!-- ───────── Promo video ───────── -->
+    <section class="container cs-demo">
+      <div class="demo-stage">
+        <button class="demo-screen project__media--video" type="button" data-video="../assets/hanziflow-app-promo.mp4?v=1" data-captions="../assets/hanziflow-app-promo.en.vtt?v=1" data-caption="Narrated 1:29 promo of the HanziFlow app: learning path, pronunciation scoring, handwriting checks, context generation, quizzes and progress. The voice-over is AI-generated." data-preview-start="36" aria-label="Play the HanziFlow app promo video (1 minute 29 seconds, narrated)">
+          <video src="../assets/hanziflow-app-promo.mp4?v=1" poster="../assets/hanziflow-app-promo-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <span class="play-big" aria-hidden="true"><span class="play-big__icon">▶</span></span>
+          <span class="demo-screen__meta" aria-hidden="true"><span class="long">▶ Watch demo · </span>1:29<span class="long"> · narrated</span> · CC</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ───────── Screens ───────── -->
+    <section class="container cs-demo">
+      <div class="demo-stage">
+        <div class="phone-row phone-row--7">
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-home.jpg?v=2" data-caption="Home: today's plan, daily study time, pinyin practice, the next lesson quiz and a word to review"><img src="../assets/hanziflow-app/phone-home.jpg?v=2" alt="Home: today's plan, daily study time, pinyin practice, the next lesson quiz and a word to review" loading="lazy" /></button><figcaption>Home</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-journey.jpg" data-caption="Learning journey: lessons unlock step by step, with checkpoint quizzes between them"><img src="../assets/hanziflow-app/phone-journey.jpg" alt="Learning journey: lessons unlock step by step, with checkpoint quizzes between them" loading="lazy" /></button><figcaption>Journey</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-word-card.jpg?v=2" data-caption="Word card: illustration, audio, pinyin, tone-change hint and an example sentence"><img src="../assets/hanziflow-app/phone-word-card.jpg?v=2" alt="Word card: illustration, audio, pinyin, tone-change hint and an example sentence" loading="lazy" /></button><figcaption>Word card</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-pron-record.jpg" data-caption="Pronunciation: listen, then record; the app reminds the learner to say it as ní hǎo"><img src="../assets/hanziflow-app/phone-pron-record.jpg" alt="Pronunciation: listen, then record; the app reminds the learner to say it as ní hǎo" loading="lazy" /></button><figcaption>Speaking</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-write-trace.jpg" data-caption="Writing practice: trace 好 over a ghost outline with numbered, named strokes"><img src="../assets/hanziflow-app/phone-write-trace.jpg" alt="Writing practice: trace 好 over a ghost outline with numbered, named strokes" loading="lazy" /></button><figcaption>Writing</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-context-pick.jpg" data-caption="Context generation: the learner picks up to 3 mastered words, then taps to generate a sentence"><img src="../assets/hanziflow-app/phone-context-pick.jpg" alt="Context generation: picking 3 mastered words to build a sentence" loading="lazy" /></button><figcaption>Context</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-quiz.jpg" data-caption="Quiz center: a full HSK 1 mock exam plus listening and reading practice by part"><img src="../assets/hanziflow-app/phone-quiz.jpg" alt="Quiz center: a full HSK 1 mock exam plus listening and reading practice by part" loading="lazy" /></button><figcaption>Quizzes</figcaption></figure>
+        </div>
+        <p class="swipe-hint">Swipe to see all 7 screens →</p>
+        <p class="cs-note cs-phones__note">Screens from the live app on Android. Click any screen to enlarge.</p>
+      </div>
+    </section>
+
+    <!-- ───────── Summary ───────── -->
+    <section class="container cs-section cs-section--tight">
+      <div class="cs-glance">
+        <article class="card">
+          <p class="label">Who it's for</p>
+          <p>Absolute beginners preparing for HSK 1: 307 words across 15 lessons.</p>
+        </article>
+        <article class="card">
+          <p class="label">What we built</p>
+          <p>A Flutter app (Android and web) on Supabase, plus a FastAPI server on AWS EC2 running three AI services.</p>
+        </article>
+        <article class="card">
+          <p class="label">Result</p>
+          <p><span class="metric">Live beta</span> at hanziflow.site. The AI checks are <span class="metric">strict by design</span>: they never accepted a wrong answer in our tests.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── Problem ───────── -->
+    <section class="container cs-section">
+      <div class="cs-prose">
+        <p class="kicker">The problem</p>
+        <h2>Beginner apps reward guessing, not learning.</h2>
+        <p>Chinese is hard to start: four tones change a word's meaning, and characters must be written stroke by stroke. Most apps help learners memorise, but rarely tell them honestly when they are wrong.</p>
+      </div>
+      <div class="cs-problems cs-problems--4">
+        <article class="card cs-problem"><p class="cs-problem__n">Pronunciation</p><h3>Speech recognition hides tone errors.</h3><p>Standard speech-to-text "auto-corrects" to the closest real word, so a wrong tone is often accepted.</p></article>
+        <article class="card cs-problem"><p class="cs-problem__n">Writing</p><h3>Handwriting is rarely checked.</h3><p>Learners trace characters, but few apps verify whether what they wrote is actually right.</p></article>
+        <article class="card cs-problem"><p class="cs-problem__n">Vocabulary</p><h3>Words are learned without context.</h3><p>Memorised word lists don't turn into words learners can actually use in a sentence.</p></article>
+        <article class="card cs-problem"><p class="cs-problem__n">Integration</p><h3>Skills are learned separately.</h3><p>Pronunciation, writing and sentence structure live in different tools with no single learning flow.</p></article>
+      </div>
+    </section>
+
+    <!-- ───────── Features ───────── -->
+    <section class="container cs-section" id="features">
+      <div class="cs-prose">
+        <p class="kicker">What the app does</p>
+        <h2>Five features, one learning flow.</h2>
+      </div>
+      <ol class="cs-steps cs-steps--feat">
+        <li class="card"><span class="cs-steps__n">01 · Pinyin Playground</span><h3>Build syllables, hear all 4 tones</h3><p>Combine initials and finals on an interactive grid and compare tones side by side (mā vs mǎ).</p></li>
+        <li class="card"><span class="cs-steps__n">02 · Word Cards</span><h3>307 HSK 1 words</h3><p>Each card pairs the character with an image, native audio, an example sentence and its grammar pattern.</p></li>
+        <li class="card"><span class="cs-steps__n">03 · Character Writing</span><h3>Watch, trace, then get checked</h3><p>Stroke animation, ghost tracing, then an ML check that says correct, incomplete or wrong character.</p></li>
+        <li class="card"><span class="cs-steps__n">04 · Pronunciation</span><h3>Tone-aware, syllable-level scores</h3><p>Record a word and get a score per syllable, judged on the tone actually spoken, without auto-correction.</p></li>
+        <li class="card"><span class="cs-steps__n">05 · Context Generation</span><h3>Your words, in a real sentence</h3><p>Pick 2–3 learned words and get a short story that uses only HSK 1 vocabulary and grammar.</p></li>
+        <li class="card"><span class="cs-steps__n">+ Quizzes</span><h3>HSK 1 exam practice</h3><p>Eight types of listening and reading questions in the official exam format, lesson checkpoints, and a full mock exam on the official HSK 1 scoring scale.</p></li>
+      </ol>
+
+      <div class="cs-split cs-split--ai">
+        <div class="cs-prose">
+          <h3 class="cs-h3">Progress &amp; motivation</h3>
+          <p>XP, a daily streak and badges reward regular practice. The profile also turns the learner's mastered words into an <strong>HSK 1 progress bar</strong> and an estimate of the study time left, at about 15 minutes per word.</p>
+        </div>
+        <div class="phone-row phone-row--2">
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-profile.jpg" data-caption="Profile: total XP, words learned, day streak and earned badges"><img src="../assets/hanziflow-app/phone-profile.jpg" alt="Profile: total XP, words learned, day streak and earned badges" loading="lazy" /></button><figcaption>Profile</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/phone-progress.jpg" data-caption="HSK 1 progress: 27 of 307 words mastered (9%) and about 70 hours of study left"><img src="../assets/hanziflow-app/phone-progress.jpg" alt="HSK 1 progress: 27 of 307 words mastered (9%) and about 70 hours of study left" loading="lazy" /></button><figcaption>HSK 1 progress</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Architecture ───────── -->
+    <section class="container cs-section" id="architecture">
+      <div class="cs-prose">
+        <p class="kicker">Architecture</p>
+        <h2>A Flutter app, one API server, three AI services.</h2>
+        <p>The Flutter app talks to <strong>Supabase</strong> for sign-in, learner progress and audio files, and to a single <strong>FastAPI</strong> server on <strong>AWS EC2</strong> (behind Nginx) for anything that needs AI. All three AI services run in that one process.</p>
+      </div>
+      <div class="card cs-arch">
+        <div class="pipeline" aria-label="Flutter app to FastAPI on AWS EC2 to three AI services, with Supabase for data">
+          <div class="node" tabindex="0"><span class="node__k">Client</span><span class="node__v">Flutter app</span><span class="node__s">Android APK + web</span><span class="node__tip" role="tooltip">Provider state management and a repository pattern; talks to Supabase directly and to the API over HTTPS.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">Data</span><span class="node__v">Supabase</span><span class="node__s">Auth · Postgres · storage</span><span class="node__tip" role="tooltip">Google sign-in, row-level security, 36 versioned migrations, and storage for audio and illustrations.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">API · AWS EC2</span><span class="node__v">FastAPI</span><span class="node__s">REST · behind Nginx</span><span class="node__tip" role="tooltip">One FastAPI app exposes /generate-context, /pronunciation/score and /writing/verify.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node node--accent" tabindex="0"><span class="node__k">AI services</span><span class="node__v">3 models</span><span class="node__s">Speech · writing · LLM</span><span class="node__tip" role="tooltip">Wav2Vec2 (XLSR-53) pronunciation scoring and a ResNet CNN run on the server; DeepSeek is called through OpenRouter.</span></div>
+        </div>
+        <p class="pipeline__hint mono muted">↳ Hover or tap a step for details</p>
+        <figure class="cs-figure">
+          <button class="cs-figure__img" type="button" data-image="../assets/hanziflow-app/architecture.jpg" data-caption="HanziFlow system architecture">
+            <img src="../assets/hanziflow-app/architecture.jpg" alt="Architecture diagram: learner, Flutter app, FastAPI gateway with validation layer, Wav2Vec2 + CTC model, CNN template verification, DeepSeek API and Supabase" loading="lazy" />
+          </button>
+          <figcaption>System architecture from the final design presentation. Click to enlarge.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ───────── AI services ───────── -->
+    <section class="container cs-section">
+      <div class="cs-prose">
+        <p class="kicker">How the AI works</p>
+        <h2>Three services, each built to be honest.</h2>
+      </div>
+
+      <div class="cs-split cs-split--ai">
+        <div class="cs-prose">
+          <h3 class="cs-h3">1 · Pronunciation: score the tone that was spoken</h3>
+          <p>A <strong>Wav2Vec2 (XLSR-53)</strong> model with separate CTC heads for initials, finals and tones listens to the recording. The target pinyin is known in advance (e.g. <span class="mono">ni3 hao3</span>), so for each syllable the system finds the audio frames where the target is most likely and compares it with the strongest competing token.</p>
+          <p>If <span class="mono">hao4</span> beats the expected <span class="mono">hao3</span>, the learner is told exactly that, instead of the word being silently accepted. Scores are grouped as <strong>Good (≥ 60%)</strong>, <strong>Needs practice (30–60%)</strong> or <strong>Incorrect (&lt; 30%)</strong>. The app also applies <strong>tone-change rules</strong>: for 你好 it tells the learner to say <em>ní hǎo</em>, the way it is really spoken.</p>
+        </div>
+        <div class="cs-pair">
+          <div class="phone-row phone-row--2">
+            <figure class="phone-fig"><span class="phone phone--clip"><video class="clip" src="../assets/hanziflow-app/clip-pron-nihao.mp4?v=1" poster="../assets/hanziflow-app/clip-pron-nihao.jpg?v=1" muted loop playsinline preload="none" aria-label="Screen recording: the learner taps the mic, says 你好, and gets 76 for 你, 85 for 好 and 81 out of 100 overall"></video></span><figcaption><span class="live-tag">● Live</span> Say 你好, get a score</figcaption></figure>
+            <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/still-pron-nihao.jpg?v=1" data-caption="Result: 你 76 and 好 85, overall 81 / 100, rated Good"><img src="../assets/hanziflow-app/still-pron-nihao.jpg?v=1" alt="Result: 你 76 and 好 85, overall 81 / 100, rated Good" loading="lazy" /></button><figcaption>Per-syllable score</figcaption></figure>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-prose cs-prose--after">
+        <h3 class="cs-h3">2 · Handwriting: check the character, then the strokes</h3>
+        <p>The drawing is cropped, centred and turned into a 40 × 40 greyscale image. A <strong>ResNet-style CNN</strong> converts it into a 512-dimension embedding, which is compared with templates for 256 HSK 1 characters using cosine similarity. Above <strong>90%</strong> similarity it's correct, below that it's incomplete, and if another character matches clearly better it's flagged as the wrong character. A <strong>stroke checker</strong> then looks at order and joins, so feedback is specific: "write #2 撇 before #3 横", with the rule behind it ("this 横 comes after the stroke it crosses, same in 女、子").</p>
+      </div>
+      <div class="phone-row phone-row--2 phone-row--spaced">
+          <figure class="phone-fig"><span class="phone phone--clip"><video class="clip" src="../assets/hanziflow-app/clip-write-nihao.mp4?v=1" poster="../assets/hanziflow-app/clip-write-nihao.jpg?v=1" muted loop playsinline preload="none" aria-label="Screen recording (1.5× speed): 你 is written correctly (91), 好 in the wrong order (88, with the rule explained), then the word result"></video></span><figcaption><span class="live-tag">● Live</span> Write 你好</figcaption></figure>
+          <figure class="phone-fig"><button class="phone" type="button" data-image="../assets/hanziflow-app/still-write-nihao.jpg?v=1" data-caption="Result: 你 91 and 好 88, overall 90 / 100, with a note that writing scores are still being calibrated"><img src="../assets/hanziflow-app/still-write-nihao.jpg?v=1" alt="Result: 你 91 and 好 88, overall 90 / 100, with a note that writing scores are still being calibrated" loading="lazy" /></button><figcaption>Word result</figcaption></figure>
+        </div>
+        <p class="cs-note cs-phones__note">Recording shown at 1.5× speed. The app itself notes that writing scores are still being calibrated.</p>
+
+      <div class="cs-split cs-split--gap cs-split--clip">
+        <div class="cs-prose">
+          <h3 class="cs-h3">3 · Context generation: the LLM writes, the backend decides</h3>
+          <p><strong>DeepSeek</strong> (through OpenRouter) writes a short story from the learner's chosen words. Nothing it says about its own output is trusted: the backend re-checks every sentence itself and builds the pinyin from the app's own dictionary.</p>
+          <div class="card cs-checks">
+            <p class="label">Validation layer</p>
+            <ul class="bullets">
+              <li><strong>Every word</strong> is segmented and checked against the 307-word HSK 1 list</li>
+              <li><strong>Length and grammar</strong> must fit the approved HSK 1 patterns</li>
+              <li><strong>Up to 3 retries</strong>, then a template fallback; if nothing passes, the app shows an error rather than bad Chinese</li>
+            </ul>
+          </div>
+        </div>
+        <div class="phone-row phone-row--1">
+          <figure class="phone-fig"><span class="phone phone--clip phone--nobar"><video class="clip" src="../assets/hanziflow-app/clip-context.mp4?v=3" poster="../assets/hanziflow-app/clip-context.jpg?v=3" muted loop playsinline preload="none" aria-label="Screen recording: the learner picks 好, 很 and 老师, and the app generates 老师很好 with pinyin, translation and an HSK1 Verified badge"></video></span><figcaption><span class="live-tag">● Live</span> Pick words → verified story</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Evaluation ───────── -->
+    <section class="container cs-section" id="evaluation">
+      <div class="cs-prose">
+        <p class="kicker">Evaluation</p>
+        <h2>Strict on purpose: never accept a wrong answer.</h2>
+        <p>For beginners, praising a mistake is worse than asking for a retry, because it locks in a bad habit. Both models were tuned to be strict, and the tests show exactly that trade-off.</p>
+      </div>
+
+      <div class="cs-eval">
+        <div class="card cs-metrics">
+          <p class="label">Pronunciation · 100 AISHELL clips (50 correct, 50 mismatched)</p>
+          <table>
+            <thead><tr><th></th><th>Rated good</th><th>Rated incorrect</th></tr></thead>
+            <tbody>
+              <tr><td>Actually correct</td><td>28</td><td>22</td></tr>
+              <tr><td>Actually wrong</td><td><strong>0</strong></td><td>50</td></tr>
+            </tbody>
+          </table>
+          <p class="cs-note"><strong>Precision 100%</strong> (no wrong pronunciation rated good) · recall 56% · accuracy 78%. About 4 in 10 correct attempts are asked to retry.</p>
+        </div>
+        <div class="card cs-metrics">
+          <p class="label">Handwriting · rejecting unknown input, 11,600 CASIA-HWDB samples</p>
+          <table>
+            <thead><tr><th></th><th>Accepted</th><th>Rejected</th></tr></thead>
+            <tbody>
+              <tr><td>Valid characters (10,654)</td><td>10,483</td><td>171</td></tr>
+              <tr><td>Unknown inputs (946)</td><td><strong>0</strong></td><td>946</td></tr>
+            </tbody>
+          </table>
+          <p class="cs-note"><strong>0 unknown inputs accepted</strong> · 1.6% of valid writing is asked to retry. Separately, the model recognised characters with <strong>97.55% overall accuracy</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Next ───────── -->
+    <section class="container cs-section" id="next">
+      <div class="cs-two">
+        <article class="card">
+          <p class="kicker">Next: user testing</p>
+          <ul class="bullets">
+            <li><strong>5–10 absolute beginners</strong> use word cards, pronunciation, writing, context generation and quizzes.</li>
+            <li><strong>Pronunciation:</strong> compare app scores with a Chinese teacher's ratings (Pearson correlation).</li>
+            <li><strong>Writing:</strong> character accuracy against a teacher's judgement.</li>
+            <li><strong>Usability:</strong> SUS score and 1–5 satisfaction ratings.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="kicker">What I took away</p>
+          <ul class="bullets">
+            <li><strong>Choose the right error to avoid.</strong> For learners, a false "correct" costs more than an extra retry.</li>
+            <li><strong>Never trust the LLM's word.</strong> A deterministic validation layer is what makes generated content safe to show.</li>
+            <li><strong>The app makes the model useful.</strong> Recording, uploads, waiting states and clear per-syllable feedback decide whether learners trust an AI score.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── Footer CTA ───────── -->
+    <section class="container cs-section">
+      <div class="contact card cs-next">
+        <p class="kicker">Next</p>
+        <h2>See more of my work.</h2>
+        <div class="cta cta--center">
+          <a href="house-price.html" class="btn">House Price case study →</a>
+          <a href="../index.html#projects" class="btn btn--ghost">All projects</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <p>© <span id="year">2026</span> Swan Htet Naing · Bangkok, Thailand</p>
+    <a href="#overview">Back to top ↑</a>
+  </footer>
+
+  <dialog class="video-modal" id="videoModal" aria-label="Demo video">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close video">✕</button>
+      <video controls playsinline preload="none"></video>
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+  <dialog class="video-modal image-modal" id="imageModal" aria-label="Image">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close">✕</button>
+      <img alt="" />
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+
+  <script src="../script.js?v=20261111a"></script>
+</body>
+</html>

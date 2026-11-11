@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Swan Htet Naing — Software Engineer (AI &amp; Data)</title>
+  <meta name="description" content="Swan Htet Naing, a Bangkok-based software engineer in AI and data. Final-year KMUTT CS student building ML pipelines, LLM apps and data platforms." />
+  <meta name="theme-color" content="#f5f5f7" />
+
+  <!-- Link previews (LinkedIn, Line, WhatsApp, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Swan Htet Naing — Software Engineer (AI &amp; Data)" />
+  <meta property="og:description" content="ML pipelines, LLM fine-tuning, and data engineering. Based in Bangkok, Thailand." />
+  <meta property="og:url" content="https://shn047.github.io/" />
+  <meta property="og:site_name" content="Swan Htet Naing" />
+  <meta property="og:image" content="https://shn047.github.io/assets/og-image.png" />
+  <meta property="og:image:alt" content="Swan Htet Naing — Software Engineer (AI &amp; Data)" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Swan Htet Naing — Software Engineer (AI &amp; Data)" />
+  <meta name="twitter:description" content="ML pipelines, LLM fine-tuning, and data engineering. Based in Bangkok, Thailand." />
+  <meta name="twitter:image" content="https://shn047.github.io/assets/og-image.png" />
+  <link rel="canonical" href="https://shn047.github.io/" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231d1d1f'/><text x='50%' y='54%' font-family='Helvetica,Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle' dominant-baseline='middle'>SN</text></svg>" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20261111q" />
+
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!-- ───────── Nav ───────── -->
+  <header class="nav">
+    <div class="nav__inner container">
+      <a href="#top" class="nav__brand">Swan Htet Naing</a>
+      <nav class="nav__links" id="navLinks" aria-label="Sections">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button type="button" class="icon-btn" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <a href="assets/resume.pdf" class="btn btn--small" download>Resume</a>
+        <button type="button" class="icon-btn nav__toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span class="bars" aria-hidden="true"><span></span><span></span></span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"></div>
+  </header>
+
+  <main id="top">
+
+    <!-- ───────── Hero / Bento ───────── -->
+    <section class="hero container">
+      <div class="bento">
+
+        <div class="tile tile--intro reveal">
+          <canvas class="neural" aria-hidden="true"></canvas>
+          <div class="intro__text">
+            <div class="pills">
+              <p class="pill-loc">Bangkok, Thailand</p>
+            </div>
+            <h1>Swan Htet Naing</h1>
+            <p class="role">Software Engineer</p>
+            <p class="focus mono">focused on <span class="typed" data-words="AI &amp; data systems|LLM apps|ML pipelines|Data platforms">AI &amp; data systems</span><span class="caret" aria-hidden="true"></span></p>
+            <p class="tagline">I build software that turns data into working products, from production data pipelines to LLM-powered apps.</p>
+            <div class="cta">
+              <a href="#projects" class="btn magnetic">View projects</a>
+              <a href="assets/resume.pdf" class="btn btn--ghost magnetic" download>Download résumé</a>
+              <span class="cta__icons">
+                <a href="https://github.com/Shn047" class="icon-btn icon-btn--lg magnetic" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/swan-htet-naing047" class="icon-btn icon-btn--lg magnetic" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+                </a>
+              </span>
+            </div>
+          </div>
+          <div class="intro__photo">
+            <!-- Photo: profile.webp (97 KB), with profile.png as fallback. Initials show if it is missing. -->
+            <span class="intro__glow" aria-hidden="true"></span>
+            <picture>
+              <source srcset="assets/profile.webp?v=2026-11-11" type="image/webp" />
+              <img src="assets/profile.png?v=2026-11-02" alt="Portrait of Swan Htet Naing" width="896" height="1195" fetchpriority="high" onerror="this.closest('.intro__photo').classList.add('no-photo');this.remove()" />
+            </picture>
+            <span class="initials" aria-hidden="true">SN</span>
+          </div>
+        </div>
+
+        <a class="tile tile--stat tile--link reveal" href="#hanziflow">
+          <p class="label">Featured project</p>
+          <p class="big big--sm">HanziFlow</p>
+          <p class="muted">Fine-tuned LLM in a working browser extension<br />▶ 39s narrated demo</p>
+          <span class="tile__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="tile tile--stat tile--link reveal" href="#experience">
+          <p class="label">Experience</p>
+          <p class="big big--sm">Vero Financial</p>
+          <p class="muted">Data Engineer Intern · Fintech · 2026<br />BigQuery data warehouse in production</p>
+          <span class="tile__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a class="tile tile--stat tile--edu tile--link reveal" href="#education">
+          <p class="label">Education</p>
+          <p class="big big--sm">KMUTT</p>
+          <p class="muted">B.Sc. Computer Science (Data Science) · <span class="nowrap">GPA 3.60 / 4.00</span> · <span class="nowrap">Graduating Dec 2026</span></p>
+          <span class="tile__arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <div class="tile tile--stack reveal">
+          <p class="label">Core stack</p>
+          <ul class="chips">
+            <li>Python</li><li>Dart / Flutter</li><li>SQL</li><li>JavaScript</li><li>FastAPI</li><li>PostgreSQL (Supabase)</li>
+            <li>BigQuery</li><li>PyTorch</li><li>Hugging Face</li><li>LLM fine-tuning (QLoRA)</li><li>Git</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Stats strip -->
+      <ul class="stats reveal">
+        <li><strong data-count="1">1</strong><span>Data engineering internship</span></li>
+        <li><strong data-count="4">4</strong><span>Built software &amp; AI projects</span></li>
+        <li><a class="stats__link" href="#awards"><strong data-count="3">3</strong><span>Awards &amp; rankings →</span></a></li>
+        <li><strong data-count="9">9</strong><span>Certifications (NVIDIA, IBM, Kaggle)</span></li>
+      </ul>
+    </section>
+
+    <!-- ───────── About ───────── -->
+    <section class="section container" id="about">
+      <div class="section__head reveal">
+        <p class="kicker">About</p>
+        <h2>Engineer first, data scientist by training.</h2>
+      </div>
+      <div class="about reveal">
+        <p>I'm a final-year Computer Science student at <strong>King Mongkut's University of Technology Thonburi (KMUTT)</strong> on the Data Science track. I like the whole lifecycle of an ML system: modelling the data, building the pipeline, training and fine-tuning the model, then putting it in front of real users.</p>
+        <p>At a Bangkok fintech startup I built a production data warehouse in BigQuery. In team and personal projects I've fine-tuned and deployed an LLM with QLoRA, ranked in the top 8% of a global Kaggle competition, and won awards for applied AI and IoT system designs.</p>
+        <dl class="facts">
+          <div><dt>Languages</dt><dd>English (fluent, <strong>TOEIC 870</strong>) · Burmese (native) · Thai (basic)</dd></div>
+          <div><dt>Available</dt><dd>From January 2027</dd></div>
+          <div><dt>Interests</dt><dd>LLM apps &amp; RAG · Model deployment · Data platforms</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ───────── Experience ───────── -->
+    <section class="section container" id="experience">
+      <div class="section__head reveal">
+        <p class="kicker">Experience</p>
+        <h2>Shipping data to production.</h2>
+      </div>
+
+      <article class="card exp reveal">
+        <header class="exp__head">
+          <div>
+            <h3>Data Engineer Intern</h3>
+            <p class="exp__org">Vero Financial Ltd. · Fintech · Bangkok</p>
+          </div>
+          <p class="mono muted">Jun 2026 – Jul 2026</p>
+        </header>
+
+        <!-- Pipeline diagram -->
+        <div class="pipeline" aria-label="Data pipeline: Supabase to BigQuery staging to star-schema marts to Looker Studio">
+          <div class="node" tabindex="0"><span class="node__k">Source</span><span class="node__v">Supabase</span><span class="node__s">Production DB</span><span class="node__tip" role="tooltip">The live app database. Moving analytics off it keeps production fast and safe.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">Staging</span><span class="node__v">BigQuery</span><span class="node__s">Cleaned tables</span><span class="node__tip" role="tooltip">Staging tables that clean and standardise raw production data before modelling.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node" tabindex="0"><span class="node__k">Marts</span><span class="node__v">Star Schema</span><span class="node__s">Fact &amp; dimension</span><span class="node__tip" role="tooltip">Fact and dimension tables for user behaviour, reward programs and challenge engagement.</span></div>
+          <span class="arrow" aria-hidden="true"></span>
+          <div class="node node--accent" tabindex="0"><span class="node__k">Serve</span><span class="node__v">Looker Studio</span><span class="node__s">Live KPI dashboard</span><span class="node__tip" role="tooltip">A production dashboard giving stakeholders real-time visibility into key KPIs.</span></div>
+        </div>
+        <p class="pipeline__hint mono muted">↳ Hover or tap a step for details</p>
+
+        <ul class="bullets">
+          <li>Built an <strong>end-to-end data warehouse pipeline in BigQuery</strong> with staging and analytics mart layers on a star schema, separating analytics from the production Supabase database.</li>
+          <li>Designed <strong>fact and dimension tables</strong> for reporting on user behaviour, reward programs and challenge engagement.</li>
+          <li>Built and maintained a <strong>production Looker Studio dashboard</strong> giving stakeholders real-time visibility into key business KPIs.</li>
+          <li>Debugged <strong>data quality issues in a live production system</strong> and adapted the workflow to a network-restricted environment.</li>
+          <li>Studied the app's production codebase and learned its backend stack by building a <strong>NestJS + TypeScript REST API</strong> with Prisma, PostgreSQL, validation, Swagger docs and a simple web frontend, revised after supervisor code review.</li>
+          <li>Worked in agile sprints and presented weekly pipeline progress to cross-functional teammates.</li>
+        </ul>
+        <ul class="chips chips--sm">
+          <li>BigQuery</li><li>SQL</li><li>Supabase</li><li>Star Schema</li><li>ETL</li><li>Looker Studio</li><li>NestJS</li><li>TypeScript</li><li>Prisma</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- ───────── Projects ───────── -->
+    <section class="section container" id="projects">
+      <div class="section__head reveal">
+        <p class="kicker">Projects</p>
+        <h2>Selected work.</h2>
+        <p class="muted">Built and shipped work first, then award-winning designs. Open any case study for the full story.</p>
+      </div>
+
+      <!--
+        Links: put your URL in href="...". Links left as href="" are hidden
+        automatically, so nothing broken shows up.
+      -->
+      <div class="projects">
+
+        <!-- Featured -->
+        <article class="card project project--featured reveal" id="hanziflow">
+          <header class="featured__head">
+            <div class="project__top">
+              <span class="tag">LLM · NLP · Deployment</span>
+              <span class="badge">Featured</span>
+            </div>
+            <h3>HanziFlow <span class="h3-sub">· Browser Extension</span></h3>
+            <p class="project__lead">A fine-tuned small language model that segments Chinese text in real time inside the browser, replacing paid NLP APIs.</p>
+          </header>
+
+          <div class="demo-stage">
+            <button class="demo-screen project__media--video" type="button" data-video="assets/hanziflow-demo-voice.mp4?v=20261111" data-captions="assets/hanziflow-demo.en.vtt?v=20261111" data-caption="Narrated walkthrough of the HanziFlow browser extension, shown at real speed. Idle moments are cut; the voice-over is AI-generated." aria-label="Play the HanziFlow demo video (39 seconds, narrated)">
+              <video src="assets/hanziflow-demo-voice.mp4?v=20261111" poster="assets/hanziflow-demo-poster.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+              <span class="play-big" aria-hidden="true"><span class="play-big__icon">▶</span></span>
+              <span class="demo-screen__meta" aria-hidden="true"><span class="long">▶ Watch demo · </span>39s<span class="long"> · narrated</span> · CC</span>
+            </button>
+          </div>
+
+          <div class="featured__grid">
+            <div class="featured__intro">
+              <p class="role-note"><span class="label">Team project · my role</span>Fine-tuned and evaluated the model, and co-designed the architecture that serves it to the browser extension.</p>
+              <p class="flow mono" aria-label="Architecture">Firefox extension <span>→</span> FastAPI <span>→</span> Haystack RAG <span>+</span> Unsloth SLM</p>
+              <ul class="chips chips--sm"><li>Qwen3-8B</li><li>QLoRA</li><li>Unsloth</li><li>FastAPI</li><li>Haystack</li></ul>
+            </div>
+            <div class="featured__details">
+              <dl class="par">
+                <div><dt>Problem</dt><dd>Third-party NLP APIs are costly, slow and hard to customise for high-volume text segmentation. Tools like Jieba mis-segment domain-specific text.</dd></div>
+                <div><dt>Approach</dt><dd>Compared 4 open models, then fine-tuned Qwen3-8B with QLoRA (Unsloth) on 17.6k Chinese Treebank sentences, checked it against Jieba and ChatGPT, and served it through FastAPI with a Haystack RAG layer to a Firefox extension.</dd></div>
+                <div><dt>Result</dt><dd><span class="metric">Comparable to Jieba</span> in a human-reviewed comparison, with <span class="metric">no paid API</span> needed, deployed as a working browser extension.</dd></div>
+              </dl>
+              <div class="links">
+                <a href="projects/hanziflow.html" class="cs-link">Read the case study →</a>
+                <a href="" target="_blank" rel="noopener">Live demo ↗</a>
+                <a href="https://github.com/Shn047/hanziflow" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project project--app reveal" id="hanziflow-app">
+          <a class="project__media project__media--app" href="projects/hanziflow-app.html" tabindex="-1"><span class="phone-row phone-row--card phone-row--card7"><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-home.jpg?v=2" alt="HanziFlow app: home screen" loading="lazy" /></span></span><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-journey.jpg" alt="HanziFlow app: journey screen" loading="lazy" /></span></span><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-word-card.jpg?v=2" alt="HanziFlow app: word card screen" loading="lazy" /></span></span><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-pron-record.jpg" alt="HanziFlow app: speaking screen" loading="lazy" /></span></span><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-write-trace.jpg" alt="HanziFlow app: writing screen" loading="lazy" /></span></span><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-context-pick.jpg" alt="HanziFlow app: context generation word picker" loading="lazy" /></span></span><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-quiz.jpg" alt="HanziFlow app: quizzes screen" loading="lazy" /></span></span><span class="phone-wrap"><span class="phone"><img src="assets/hanziflow-app/phone-profile.jpg" alt="HanziFlow app: profile screen with XP, streak and badges" loading="lazy" /></span></span></span><span class="swipe-hint">Swipe to see all 8 screens →</span></a>
+          <div class="project__top">
+            <span class="tag">Mobile app · AI · Full stack</span>
+            <span class="badge badge--progress">Capstone · Live beta</span>
+          </div>
+          <h3>HanziFlow <span class="h3-sub">· Learning App</span></h3>
+          <p class="project__lead">A Flutter app that takes absolute beginners through HSK 1 Chinese, with AI feedback on pronunciation and handwriting, and AI-generated practice sentences.</p>
+          <p class="role-note"><span class="label">Team of 3 · my role</span>Built the Flutter app (Android and web), connected to Supabase and the AI services, and contributed to building the pronunciation model.</p>
+          <dl class="par">
+            <div><dt>Problem</dt><dd>Beginner apps rarely give honest feedback: speech recognition auto-corrects wrong tones, writing isn't checked, and vocabulary is memorised without context.</dd></div>
+            <div><dt>Approach</dt><dd>A Flutter app (Android and web) backed by Supabase, calling a FastAPI server on <strong>AWS EC2</strong> with three AI services: <strong>Wav2Vec2 (XLSR-53)</strong> with separate initial, final and tone CTC heads for pronunciation scoring, a <strong>ResNet CNN</strong> that compares handwriting with 256 character templates, and <strong>DeepSeek</strong> sentence generation that is validated against the HSK 1 word list, with retries and a template fallback.</dd></div>
+            <div><dt>Result</dt><dd><span class="metric">Live at hanziflow.site</span> · Strict by design: <span class="metric">0 wrong pronunciations accepted</span> in a 100-clip AISHELL test, and <span class="metric">0 of 946 unknown inputs accepted</span> in an 11,600-sample CASIA handwriting test. User testing with beginners is next.</dd></div>
+          </dl>
+          <ul class="chips chips--sm"><li>Flutter</li><li>Dart</li><li>FastAPI</li><li>Supabase (PostgreSQL)</li><li>AWS EC2</li><li>Nginx</li><li>PyTorch</li><li>Wav2Vec2</li><li>ResNet CNN</li><li>DeepSeek</li></ul>
+          <div class="links">
+            <a href="projects/hanziflow-app.html" class="cs-link">Read the case study →</a>
+            <a href="https://www.hanziflow.site" target="_blank" rel="noopener">Try the live app ↗</a>
+            <button class="link-btn" type="button" data-video="assets/hanziflow-app-promo.mp4?v=1" data-captions="assets/hanziflow-app-promo.en.vtt?v=1" data-caption="Narrated 1:29 promo of the HanziFlow app: learning path, pronunciation scoring, handwriting checks, context generation, quizzes and progress. The voice-over is AI-generated.">▶ Watch the 1:29 demo</button>
+          </div>
+          <p class="private-note">Source code is private while the capstone is being assessed. A walkthrough is available on request.</p>
+        </article>
+
+        <article class="card project project--wide reveal">
+          <a class="project__media" href="projects/house-price.html" tabindex="-1">
+            <img src="assets/kaggle.jpg" alt="Exploratory charts of top feature relationships with sale price" loading="lazy" />
+          </a>
+          <div class="project__top">
+            <span class="tag">Machine Learning</span>
+            <span class="badge badge--award">Kaggle Top 8%</span>
+          </div>
+          <h3>House Price Prediction</h3>
+          <p class="role-note"><span class="label">Team of 4 · my role</span>Coordinated the team and was responsible for the modelling: feature engineering, the scikit-learn pipeline, Optuna tuning and the final stacked ensemble.</p>
+          <dl class="par">
+            <div><dt>Problem</dt><dd>Predict house sale prices from 79 property features with missing values, skewed prices and outliers, without overfitting.</dd></div>
+            <div><dt>Approach</dt><dd>EDA, a reusable scikit-learn pipeline with engineered features, then 7 Optuna-tuned models stacked with a RidgeCV meta-model.</dd></div>
+            <div><dt>Result</dt><dd><span class="metric">Top 8%</span> globally · <span class="metric">RMSE 0.121</span> · up from rank <span class="metric">#734 → #419</span></dd></div>
+          </dl>
+          <ul class="chips chips--sm"><li>scikit-learn</li><li>Optuna</li><li>LightGBM</li><li>XGBoost</li></ul>
+          <div class="links">
+            <a href="projects/house-price.html" class="cs-link">Read the case study →</a>
+            <a href="" target="_blank" rel="noopener">Kaggle ↗</a>
+            <a href="https://github.com/Shn047/Kaggle-House-Prices" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        
+
+        <div class="projects__divider reveal">
+          <p class="kicker">Award-winning system designs</p>
+          <p class="muted">Competition concepts: problem research, system architecture and business case, judged by competition panels.</p>
+        </div>
+
+        <article class="card project project--concept reveal">
+          <a class="project__media project__media--light" href="projects/aquasense.html" tabindex="-1">
+            <img src="assets/aquasense.jpg" alt="AquaSense mobile dashboard next to the solar-powered sensor and stereoscopic camera unit" loading="lazy" />
+          </a>
+          <div class="project__top">
+            <span class="tag">System design · IoT</span>
+            <span class="badge badge--award">Innovative Business Idea Award</span>
+          </div>
+          <h3>AquaSense</h3>
+          <dl class="par">
+            <div><dt>Problem</dt><dd>Small and mid-size fish farms in Southeast Asia have no affordable real-time monitoring, so they react only after fish start dying.</dd></div>
+            <div><dt>Proposed design</dt><dd>A solar-powered unit with pH, oxygen and ammonia sensors, stereoscopic cameras for vision-based biomass estimation, and a mobile alert dashboard. In a team of 2, I researched feasibility, co-designed the system and data flow, built the cost-saving analysis and pitched on stage.</dd></div>
+            <div><dt>Result</dt><dd><span class="metric">Innovative Business Idea Award</span> · projected savings of <span class="metric">up to ฿330k a year</span> for a 20-hectare farm.</dd></div>
+          </dl>
+          <ul class="chips chips--sm"><li>System Architecture</li><li>IoT Data Pipeline</li><li>Business Case</li></ul>
+          <div class="links">
+            <a href="projects/aquasense.html" class="cs-link">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="card project project--concept reveal">
+          <a class="project__media project__media--light" href="projects/lx-sense.html" tabindex="-1">
+            <img src="assets/lxsense.png" alt="LX-Sense flow: camera feed to local AI module to energy optimisation" loading="lazy" />
+          </a>
+          <div class="project__top">
+            <span class="tag">System design · Vision</span>
+            <span class="badge badge--award">Honorable Mention</span>
+          </div>
+          <h3>LX-Sense</h3>
+          <dl class="par">
+            <div><dt>Problem</dt><dd>Empty campus rooms waste energy; motion sensors switch off on students sitting still, and smart sensors are costly to install.</dd></div>
+            <div><dt>Proposed design</dt><dd>Software that reuses existing CCTV: a local AI module (e.g. Raspberry Pi) counts people and drives lighting and HVAC, with no video recorded and no new hardware. I reviewed the literature and designed the detection approach.</dd></div>
+            <div><dt>Result</dt><dd><span class="metric">Honorable Mention</span> in the energy-conservation poster contest, KMUTT Energy Saving Day 2025.</dd></div>
+          </dl>
+          <ul class="chips chips--sm"><li>System Architecture</li><li>Edge AI</li><li>Privacy by Design</li></ul>
+          <div class="links">
+            <a href="projects/lx-sense.html" class="cs-link">Read the case study →</a>
+          </div>
+        </article>
+
+        <article class="card project project--more reveal">
+          <p class="kicker">More projects</p>
+          <ul class="more-list">
+            <li>
+              <div>
+                <h3>Heart Sound Classification</h3>
+                <p class="muted">Course project (Machine Learning). A CNN on 3-channel log-Mel spectrograms of PhysioNet heart recordings. Re-auditing it taught me to evaluate at patient level and guard against data leakage.</p>
+                <ul class="chips chips--sm"><li>TensorFlow</li><li>CNN</li><li>librosa</li></ul>
+              </div>
+              <a href="https://github.com/Shn047/HeartSound_Classification" target="_blank" rel="noopener">GitHub ↗</a>
+            </li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ───────── Awards ───────── -->
+    <section class="section container" id="awards">
+      <div class="section__head reveal">
+        <p class="kicker">Awards &amp; recognition</p>
+        <h2>Pitched, judged, recognised.</h2>
+      </div>
+      <div class="awards">
+        <article class="card award reveal">
+          <button class="award__photo" type="button" data-image="assets/awards/acts-pitch.jpg" data-caption="Pitching AquaSense on stage at KMUTT ACTS 2025">
+            <img src="assets/awards/acts-pitch.jpg" alt="Swan pitching AquaSense on stage at KMUTT ACTS 2025, seen from the back of the audience" loading="lazy" style="object-position: center 55%" />
+          </button>
+          <div class="award__body">
+            <p class="award__meta">KMUTT ACTS 2025 · Aug 2025</p>
+            <h3>Innovative Business Idea Award</h3>
+            <p class="muted">Innovate to Impact competition, for <strong>AquaSense</strong>, pitched to an industry judging panel.</p>
+            <a class="cs-link" href="projects/aquasense.html#recognition">See the project →</a>
+          </div>
+        </article>
+        <article class="card award reveal">
+          <button class="award__photo" type="button" data-image="assets/awards/eesh-pitch.jpg" data-caption="Pitching LX-Sense on stage at KMUTT Energy Saving Day 2025">
+            <img src="assets/awards/eesh-pitch.jpg" alt="Swan pitching LX-Sense on stage at KMUTT Energy Saving Day 2025" loading="lazy" style="object-position: 60% 30%" />
+          </button>
+          <div class="award__body">
+            <p class="award__meta">KMUTT Energy Saving Day · Nov 2025</p>
+            <h3>Honorable Mention</h3>
+            <p class="muted">Energy-conservation poster contest, for <strong>LX-Sense</strong>, a privacy-first energy-saving design.</p>
+            <a class="cs-link" href="projects/lx-sense.html#recognition">See the project →</a>
+          </div>
+        </article>
+        <article class="card award reveal">
+          <div class="award__photo award__photo--stat" aria-hidden="true">
+            <span class="award__big">Top 8%</span>
+            <span class="award__sub mono">Rank #419 · RMSE 0.12119</span>
+          </div>
+          <div class="award__body">
+            <p class="award__meta">Kaggle · global leaderboard</p>
+            <h3>Top 8% worldwide</h3>
+            <p class="muted">House Prices: Advanced Regression Techniques. A team of 4, with a stacked ensemble of 7 tuned models.</p>
+            <a class="cs-link" href="projects/house-price.html#results">See the project →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── Skills ───────── -->
+    <section class="section container" id="skills">
+      <div class="section__head reveal">
+        <p class="kicker">Skills</p>
+        <h2>Toolkit.</h2>
+      </div>
+      <div class="skills">
+        <div class="card skill reveal">
+          <h3><span class="dot dot--2"></span>Languages</h3>
+          <ul class="chips chips--sm"><li>Python</li><li>Dart</li><li>SQL</li><li>JavaScript</li><li>TypeScript</li><li>Java</li></ul>
+        </div>
+        <div class="card skill reveal">
+          <h3><span class="dot dot--1"></span>Apps &amp; Backend</h3>
+          <ul class="chips chips--sm"><li>Flutter</li><li>FastAPI</li><li>NestJS</li><li>Prisma</li><li>REST APIs</li><li>React</li><li>Node.js / Express</li><li>Browser Extensions</li></ul>
+        </div>
+        <div class="card skill reveal">
+          <h3><span class="dot dot--3"></span>Data &amp; Cloud</h3>
+          <ul class="chips chips--sm"><li>PostgreSQL (Supabase)</li><li>Auth &amp; Row-Level Security</li><li>DB Migrations</li><li>BigQuery</li><li>ETL &amp; Star Schema</li><li>MySQL</li><li>AWS EC2</li><li>Nginx</li><li>Looker Studio</li></ul>
+        </div>
+        <div class="card skill reveal">
+          <h3><span class="dot dot--4"></span>AI &amp; ML</h3>
+          <ul class="chips chips--sm"><li>PyTorch</li><li>Hugging Face Transformers</li><li>LLM Fine-tuning (QLoRA, Unsloth)</li><li>RAG (Haystack)</li><li>Speech Models (Wav2Vec2)</li><li>TensorFlow / Keras</li><li>scikit-learn</li><li>XGBoost / LightGBM</li></ul>
+        </div>
+        <div class="card skill reveal skill--wide">
+          <h3><span class="dot dot--5"></span>Testing &amp; Tools</h3>
+          <ul class="chips chips--sm"><li>Git &amp; GitHub</li><li>Flutter Widget Tests</li><li>pytest</li><li>JUnit</li><li>Supabase CLI</li><li>Google Colab / Jupyter</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Education ───────── -->
+    <section class="section container" id="education">
+      <div class="section__head reveal">
+        <p class="kicker">Education</p>
+        <h2>Foundations.</h2>
+      </div>
+      <div class="edu">
+        <article class="card reveal">
+          <div class="exp__head">
+            <div>
+              <h3>B.Sc. Computer Science, Data Science Track</h3>
+              <p class="exp__org">King Mongkut's University of Technology Thonburi (KMUTT) · Bangkok</p>
+            </div>
+            <p class="mono muted">Expected graduation: Dec 2026</p>
+          </div>
+          <p class="gpa"><strong>GPA 3.60</strong> <span class="muted">/ 4.00</span></p>
+          <div class="courses">
+            <p class="label">Core coursework</p>
+            <ul class="chips chips--sm">
+              <li>Data Structures &amp; Algorithms</li><li>Software Testing</li><li>Database Systems</li><li>Artificial Intelligence</li><li>Machine Learning</li><li>Statistics</li><li>Linear Algebra</li>
+            </ul>
+          </div>
+        </article>
+
+        <div class="certs-block reveal">
+          <div class="certs-block__head">
+            <h3>Certifications <span class="h3-sub">· 9</span></h3>
+            <div class="cert-filter" role="group" aria-label="Filter certifications by issuer">
+              <button type="button" class="cert-chip is-active" data-filter="all" aria-pressed="true">All <span>9</span></button>
+              <button type="button" class="cert-chip" data-filter="nvidia" aria-pressed="false">NVIDIA <span>1</span></button>
+              <button type="button" class="cert-chip" data-filter="ibm" aria-pressed="false">IBM <span>4</span></button>
+              <button type="button" class="cert-chip" data-filter="kaggle" aria-pressed="false">Kaggle <span>4</span></button>
+            </div>
+          </div>
+          <div class="cert-grid">
+            <article class="cert-card" data-issuer="nvidia">
+              <span class="cert-card__mark cert-card__mark--nvidia" aria-hidden="true">NV</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">NVIDIA DLI</p>
+                <h4 class="cert-card__name">Fundamentals of Deep Learning</h4>
+                <p class="cert-card__meta">Certificate of Competency · Feb 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/nvidia-deep-learning.jpg?v=2" data-caption="Fundamentals of Deep Learning · NVIDIA DLI">View</button><a href="https://learn.nvidia.com/certificates?id=erCopA0SSwKvgzOBOJtl9A" target="_blank" rel="noopener">Verify ↗</a></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="ibm">
+              <span class="cert-card__mark cert-card__mark--ibm" aria-hidden="true">IBM</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">IBM · Coursera</p>
+                <h4 class="cert-card__name">Data Science Fundamentals with Python and SQL</h4>
+                <p class="cert-card__meta">Specialization, 5 courses · Feb 2026</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/ibm-ds-python-sql.jpg" data-caption="Data Science Fundamentals with Python and SQL · IBM · Coursera">View</button><a href="https://coursera.org/verify/specialization/6226I2LJ9671" target="_blank" rel="noopener">Verify ↗</a></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="ibm">
+              <span class="cert-card__mark cert-card__mark--ibm" aria-hidden="true">IBM</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">IBM · Coursera</p>
+                <h4 class="cert-card__name">Data Science Fundamentals</h4>
+                <p class="cert-card__meta">Specialization · Mar 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/ibm-ds-fundamentals.jpg" data-caption="Data Science Fundamentals · IBM · Coursera">View</button><a href="https://www.credly.com/badges/7b8f3228-8f82-4ced-ba06-a5c60634860b" target="_blank" rel="noopener">Verify ↗</a></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="ibm">
+              <span class="cert-card__mark cert-card__mark--ibm" aria-hidden="true">IBM</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">IBM · Coursera</p>
+                <h4 class="cert-card__name">Statistics for Data Science with Python</h4>
+                <p class="cert-card__meta">Course · Mar 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/ibm-statistics-python.jpg" data-caption="Statistics for Data Science with Python · IBM · Coursera">View</button><a href="https://www.credly.com/badges/2d29df52-be4d-42d8-872b-40b32a341be2" target="_blank" rel="noopener">Verify ↗</a></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="ibm">
+              <span class="cert-card__mark cert-card__mark--ibm" aria-hidden="true">IBM</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">IBM · Coursera</p>
+                <h4 class="cert-card__name">Python for Data Science and AI</h4>
+                <p class="cert-card__meta">Course · Jan 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/ibm-python-ds-ai.jpg" data-caption="Python for Data Science and AI · IBM · Coursera">View</button><a href="https://www.credly.com/badges/7dc8ef81-7b54-4f89-bdd5-35b67a98a5c5" target="_blank" rel="noopener">Verify ↗</a></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="kaggle">
+              <span class="cert-card__mark cert-card__mark--kaggle" aria-hidden="true">K</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">Kaggle Learn</p>
+                <h4 class="cert-card__name">Computer Vision</h4>
+                <p class="cert-card__meta">Course · May 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/kaggle-computer-vision.jpg" data-caption="Computer Vision · Kaggle Learn">View</button></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="kaggle">
+              <span class="cert-card__mark cert-card__mark--kaggle" aria-hidden="true">K</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">Kaggle Learn</p>
+                <h4 class="cert-card__name">Machine Learning Explainability</h4>
+                <p class="cert-card__meta">Course · Apr 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/kaggle-ml-explainability.jpg" data-caption="Machine Learning Explainability · Kaggle Learn">View</button></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="kaggle">
+              <span class="cert-card__mark cert-card__mark--kaggle" aria-hidden="true">K</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">Kaggle Learn</p>
+                <h4 class="cert-card__name">Intermediate Machine Learning</h4>
+                <p class="cert-card__meta">Course · Mar 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/kaggle-intermediate-ml.jpg" data-caption="Intermediate Machine Learning · Kaggle Learn">View</button></div>
+              </div>
+            </article>
+            <article class="cert-card" data-issuer="kaggle">
+              <span class="cert-card__mark cert-card__mark--kaggle" aria-hidden="true">K</span>
+              <div class="cert-card__body">
+                <p class="cert-card__issuer">Kaggle Learn</p>
+                <h4 class="cert-card__name">Intro to Machine Learning</h4>
+                <p class="cert-card__meta">Course · Jan 2025</p>
+                <div class="cert-card__acts"><button class="link-btn" type="button" data-image="assets/certs/kaggle-intro-ml.jpg" data-caption="Intro to Machine Learning · Kaggle Learn">View</button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── Contact ───────── -->
+    <section class="section container" id="contact">
+      <div class="contact card reveal">
+        <p class="kicker">Contact</p>
+        <h2>Let's build something useful.</h2>
+        <p class="muted">I'm looking for software engineering roles in AI and data, starting in January 2027.</p>
+        <div class="cta cta--center">
+          <a href="mailto:swanhtetnaing065@gmail.com" class="btn magnetic">swanhtetnaing065@gmail.com</a>
+          <button type="button" class="btn btn--ghost" id="copyEmail" data-email="swanhtetnaing065@gmail.com">Copy email</button>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/swan-htet-naing047" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/Shn047" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="" target="_blank" rel="noopener">Kaggle ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <p>© <span id="year">2026</span> Swan Htet Naing · Bangkok, Thailand</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- Video player popup -->
+  <dialog class="video-modal" id="videoModal" aria-label="Demo video">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close video">✕</button>
+      <video controls playsinline preload="none"></video>
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+
+  <!-- Certificate image popup -->
+  <dialog class="video-modal image-modal" id="imageModal" aria-label="Certificate">
+    <div class="video-modal__inner">
+      <button class="icon-btn video-modal__close" type="button" aria-label="Close">✕</button>
+      <img alt="" />
+      <p class="video-modal__caption muted"></p>
+    </div>
+  </dialog>
+
+  <script src="script.js?v=20261111a"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+WEBVTT
+
+00:00.350 --> 00:03.300
+HanziFlow helps learners read real Chinese websites.
+
+00:03.750 --> 00:05.000
+Just highlight a sentence.
+
+00:05.600 --> 00:09.050
+The text is sent to a FastAPI server,
+where a Qwen3 model,
+
+00:09.050 --> 00:12.050
+fine-tuned with QLoRA,
+splits the sentence into words.
+
+00:13.600 --> 00:16.450
+We compared its output with Jieba, the standard tool.
+
+00:19.550 --> 00:23.400
+Here's the result: the full segmentation,
+then every word on its own.
+
+00:24.400 --> 00:25.950
+Next, usage patterns.
+
+00:26.450 --> 00:30.350
+A Haystack RAG pipeline finds grammar structures
+that match this sentence.
+
+00:30.800 --> 00:35.100
+Finally, a breakdown of the sentence pattern,
+with pinyin and English for each part.
+
+00:35.450 --> 00:36.850
+No paid API needed.
