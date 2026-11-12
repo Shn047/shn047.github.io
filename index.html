@@ -263,7 +263,7 @@
           </div>
           <h3>HanziFlow <span class="h3-sub">· Learning App</span></h3>
           <p class="project__lead">A Flutter app that takes absolute beginners through HSK 1 Chinese, with AI feedback on pronunciation and handwriting, and AI-generated practice sentences.</p>
-          <p class="role-note"><span class="label">Team of 3 · my role</span>Built the Flutter app (Android and web), connected to Supabase and the AI services, and contributed to building the pronunciation model.</p>
+          <p class="role-note"><span class="label">Team of 3 · my role</span>Built the Flutter app (Android and web), and was the main contributor to the pronunciation model: data preparation, base-model training, scoring logic, calibration and integration into the app.</p>
           <dl class="par">
             <div><dt>Problem</dt><dd>Beginner apps rarely give honest feedback: speech recognition auto-corrects wrong tones, writing isn't checked, and vocabulary is memorised without context.</dd></div>
             <div><dt>Approach</dt><dd>A Flutter app (Android and web) backed by Supabase, calling a FastAPI server on <strong>AWS EC2</strong> with three AI services: <strong>Wav2Vec2 (XLSR-53)</strong> with separate initial, final and tone CTC heads for pronunciation scoring, a <strong>ResNet CNN</strong> that compares handwriting with 256 character templates, and <strong>DeepSeek</strong> sentence generation that is validated against the HSK 1 word list, with retries and a template fallback.</dd></div>

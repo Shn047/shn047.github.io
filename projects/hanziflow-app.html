@@ -35,6 +35,7 @@
       <a href="../index.html" class="nav__brand">Swan Htet Naing</a>
       <nav class="nav__links" id="navLinks" aria-label="Sections">
         <a href="#overview">Overview</a>
+        <a href="#role">My role</a>
         <a href="#features">Features</a>
         <a href="#architecture">Architecture</a>
         <a href="#evaluation">Evaluation</a>
@@ -65,7 +66,7 @@
       <p class="cs-concept cs-concept--live"><span>Live beta</span>Capstone project, deployed; user testing with beginners is next.</p>
 
       <dl class="cs-facts">
-        <div><dt>My role</dt><dd>Built the Flutter app; contributed to the pronunciation model</dd></div>
+        <div><dt>My role</dt><dd>Built the Flutter app; main contributor to the pronunciation model</dd></div>
         <div><dt>Team</dt><dd>Team of 3 · Capstone project, KMUTT</dd></div>
         <div><dt>Timeline</dt><dd>Jan – Nov 2026</dd></div>
         <div><dt>Stack</dt><dd>Flutter · FastAPI · Supabase · AWS EC2 · PyTorch · DeepSeek</dd></div>
@@ -118,6 +119,28 @@
         <article class="card">
           <p class="label">Result</p>
           <p><span class="metric">Live beta</span> at hanziflow.site. The AI checks are <span class="metric">strict by design</span>: they never accepted a wrong answer in our tests.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────── My role ───────── -->
+    <section class="container cs-section" id="role">
+      <div class="cs-prose">
+        <p class="kicker">My role</p>
+        <h2>What I built in a team of 3.</h2>
+      </div>
+      <div class="cs-glance cs-glance--role">
+        <article class="card">
+          <p class="label">Flutter app</p>
+          <p>I built the app myself, for Android and web: the screens, app state, and the connection to Supabase (sign-in, database and storage) and to the AI services.</p>
+        </article>
+        <article class="card">
+          <p class="label">Pronunciation model · main contributor</p>
+          <p>I prepared the training data and trained the base <strong>Wav2Vec2</strong> model; a teammate continued the training. I then built the scoring logic and calibration, finalised the model and integrated it into the app.</p>
+        </article>
+        <article class="card">
+          <p class="label">UI design</p>
+          <p>Designed together as a team; I contributed to the design and implemented it in Flutter.</p>
         </article>
       </div>
     </section>
